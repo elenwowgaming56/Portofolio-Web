@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin Panel — Firstlyo Portfolio</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="admin-body">
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="logo"><span class="logo-dot"></span> Admin Panel</div>
+    <h2>Welcome back ✦</h2>
+    <p class="hint">Default password: <code>admin123</code></p>
+    <input type="password" id="loginPass" placeholder="Enter password" />
+    <button class="btn btn-primary" onclick="doLogin()">Login →</button>
+    <a href="index.html" class="back-link">← Back to site</a>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="dashboard" style="display:none;">
+  <aside class="sidebar">
+    <div class="logo"><span class="logo-dot"></span> Admin</div>
+    <nav>
+      <a href="#" class="nav-item active" data-tab="profile">👤 Profile</a>
+      <a href="#" class="nav-item" data-tab="projects">🎨 Projects</a>
+      <a href="#" class="nav-item" data-tab="skills">⚡ Skills</a>
+      <a href="#" class="nav-item" data-tab="settings">⚙ Settings</a>
+    </nav>
+    <button class="btn btn-ghost" onclick="doLogout()">Logout</button>
+  </aside>
+
+  <main class="main-content">
+    <!-- PROFILE TAB -->
+    <div class="tab-content active" id="tab-profile">
+      <h2>Profile & About</h2>
+      <div class="form-group">
+        <label>Profile Photo</label>
+        <div class="upload-box">
+          <img id="previewPhoto" src="" alt="preview"/>
+          <input type="file" id="photoUpload" accept="image/*" onchange="handlePhotoUpload(event)"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>About Text</label>
+        <textarea id="aboutInput" rows="5"></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="saveProfile()">💾 Save Profile</button>
+    </div>
+
+    <!-- PROJECTS TAB -->
+    <div class="tab-content" id="tab-projects">
+      <div class="tab-header">
+        <h2>Projects</h2>
+        <button class="btn btn-primary" onclick="openProjectModal()">+ New Project</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Image</th><th>Title</th><th>Category</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="projectsTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SKILLS TAB -->
+    <div class="tab-content" id="tab-skills">
+      <div class="tab-header">
+        <h2>Skills</h2>
+        <button class="btn btn-primary" onclick="openSkillModal()">+ New Skill</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Icon</th><th>Name</th><th>Level</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="skillsTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SETTINGS TAB -->
+    <div class="tab-content" id="tab-settings">
+      <h2>Settings</h2>
+      <div class="form-group">
+        <label>Change Admin Password</label>
+        <input type="password" id="newPass" placeholder="New password"/>
+      </div>
+      <button class="btn btn-primary" onclick="changePassword()">🔐 Update Password</button>
+      <hr/>
+      <button class="btn btn-ghost" onclick="resetAll()">⚠ Reset All Data</button>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL PROJECT -->
+<div id="projectModal" class="modal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="projectModalTitle">New Project</h3>
+      <button onclick="closeProjectModal()">✕</button>
+    </div>
+    <input type="hidden" id="projectId"/>
+    <div class="form-group">
+      <label>Project Image</label>
+      <div class="upload-box">
+        <img id="projectPreview" src="" alt="preview"/>
+        <input type="file" id="projectImage" accept="image/*" onchange="previewProjectImage(event)"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" id="projectTitle" placeholder="Project name"/>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <input type="text" id="projectCategory" placeholder="Web Design, App, Branding..."/>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="projectDesc" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Link (optional)</label>
+      <input type="text" id="projectLink" placeholder="https://..."/>
+    </div>
+    <button class="btn btn-primary" onclick="saveProject()">💾 Save</button>
+  </div>
+</div>
+
+<!-- MODAL SKILL -->
+<div id="skillModal" class="modal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="skillModalTitle">New Skill</h3>
+      <button onclick="closeSkillModal()">✕</button>
+    </div>
+    <input type="hidden" id="skillId"/>
+    <div class="form-group">
+      <label>Icon (emoji)</label>
+      <input type="text" id="skillIcon" placeholder="🎨" maxlength="2"/>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" id="skillName" placeholder="UI/UX Design"/>
+    </div>
+    <div class="form-group">
+      <label>Level (%)</label>
+      <input type="number" id="skillLevel" min="0" max="100" placeholder="90"/>
+    </div>
+    <button class="btn btn-primary" onclick="saveSkill()">💾 Save</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+        </html>
