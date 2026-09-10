@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Firstlyo Eilen Rizqulloh — Portfolio 2026</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Aurora Background -->
+<div class="aurora"></div>
+<div class="noise"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-follow"></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <span class="logo-dot"></span>
+    <span>Firstlyo.</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="admin.html" class="btn-admin">⚙ Admin</a>
+</nav>
+
+<!-- HERO BENTO -->
+<section id="home" class="hero">
+  <div class="hero-grid">
+    <div class="bento bento-main">
+      <p class="tag">✦ Portfolio 2026</p>
+      <h1 class="hero-title">
+        Firstlyo <br/>
+        <span class="italic">Eilen</span> Rizqulloh
+      </h1>
+      <p class="hero-sub">Creative Developer & Digital Designer — crafting immersive experiences at the intersection of code and art.</p>
+      <div class="hero-cta">
+        <a href="#works" class="btn btn-primary">View Works →</a>
+        <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+
+    <div class="bento bento-photo">
+      <div class="photo-frame" id="profilePhoto">
+        <img src="home.png" alt="Profile" id="profileImg"/>
+      </div>
+      <div class="photo-info">
+        <span class="status-dot"></span> Available for work
+      </div>
+    </div>
+
+    <div class="bento bento-stats">
+      <div class="stat">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5y</span>
+        <span class="stat-label">Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">30+</span>
+        <span class="stat-label">Clients</span>
+      </div>
+    </div>
+
+    <div class="bento bento-marquee">
+      <div class="marquee">
+        <span>DESIGN ✦ CODE ✦ CREATE ✦ INNOVATE ✦ DESIGN ✦ CODE ✦ CREATE ✦ INNOVATE ✦</span>
+      </div>
+    </div>
+
+    <div class="bento bento-location">
+      <p class="mini-label">📍 Based in</p>
+      <p class="big-text">Indonesia</p>
+      <p class="mini-label">🕐 <span id="clock">--:--</span> WIB</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-head">
+    <span class="section-tag">01 — About</span>
+    <h2 class="section-title">A little <span class="italic">about</span> me</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-card">
+      <p id="aboutText"> Saya Firstlyo Eilen Rizqulloh — Seorang pelajar dari SMK Krian 1 dengan semangat kompetitif yang tinggi. tahun lalu, saya berhasil meraih gelar Juara 1 Garena Youth Championship (GYC) School City Qualifier 2025. Prestasi ini membuktikan dedikasi, strategi, dan kerja keras saya dalam bidang e-sports. Saya percaya bahwa disiplin dan fokus yang saya bangun di arena kompetisi dapat saya terapkan untuk mencapai kesuksesan di bidang akademik maupun profesional di masa depan.".</p>
+    </div>
+    <div class="about-card">
+      <h3>Philosophy</h3>
+      <p>""Disiplin mengalahkan motivasi. Konsistensi mengalahkan intensitas."
+
+"Menjadi Juara 1 GYC bukanlah kebetulan, melainkan hasil dari rutinitas yang membosankan tapi efektif. Filosofi saya sederhana: lakukan hal-hal kecil dengan benar setiap hari. Dalam gaming maupun kehidupan nyata, konsistensi adalah kunci utama untuk mengubah potensi menjadi prestasi nyata."
+"</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works" class="section">
+  <div class="section-head">
+    <span class="section-tag">02 — Selected Works</span>
+    <h2 class="section-title">Featured <span class="italic">projects</span></h2>
+  </div>
+  <div class="works-grid" id="worksGrid">
+    <!-- Projects akan di-render oleh JS -->
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="section-head">
+    <span class="section-tag">03 — Expertise</span>
+    <h2 class="section-title">Tools & <span class="italic">skills</span></h2>
+  </div>
+  <div class="skills-grid" id="skillsGrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="contact-card">
+    <span class="section-tag">04 — Let's connect</span>
+    <h2 class="contact-title">Got a project in mind? <br/><span class="italic">Let's build it together.</span></h2>
+    <a href="mailto:firstlyo@example.com" class="btn btn-primary btn-lg">firstlyo@example.com →</a>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Dribbble</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Firstlyo Eilen Rizqulloh — Crafted with ♥</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
